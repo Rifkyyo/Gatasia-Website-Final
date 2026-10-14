@@ -1,0 +1,717 @@
+/* GATASIA Dark Mode */
+html.dark-mode{color-scheme:dark}html.dark-mode body{background:#101521!important;color:#e9edf7!important;--pale:#101521;--blue:#1d2638;--border:#354158;--navy:#e9edf7;--brown:#c0c9db;--shadow:#0a0e17}
+html.dark-mode .topbar{background:rgba(16,21,33,.95)!important;border-color:#30394b!important;box-shadow:0 4px 18px #0005!important}
+html.dark-mode .nav{background:#1b2435!important;border-color:#354158!important}
+html.dark-mode .nav-btn{color:#d4dbea!important}html.dark-mode .nav-btn.active{background:#c52830!important;color:#fff!important}
+html.dark-mode .pill,html.dark-mode .search-trigger,html.dark-mode .level-pill,html.dark-mode .xp-pill{background:#202b3e!important;color:#edf2ff!important;border-color:#3a4860!important}
+html.dark-mode .brand small{color:#c0c9db!important}
+html.dark-mode .card,html.dark-mode .panel,html.dark-mode .stat-card,html.dark-mode .mission-card,html.dark-mode .leaderboard-card,html.dark-mode .profile-card,html.dark-mode .map-card,html.dark-mode .quiz-card,html.dark-mode .modal,html.dark-mode .dropdown-menu,html.dark-mode .search-panel{background:#1a2333!important;color:#e9edf7!important;border-color:#344057!important}
+html.dark-mode input,html.dark-mode select,html.dark-mode textarea{background:#111827!important;color:#f1f5ff!important;border-color:#3b4961!important}
+html.dark-mode p,html.dark-mode li,html.dark-mode label,html.dark-mode .muted,html.dark-mode small{ } 
+html.dark-mode .site-footer{background:#0c111b!important;color:#cbd5e1!important}
+html.dark-mode table,html.dark-mode th,html.dark-mode td{border-color:#354158!important}html.dark-mode tr:nth-child(even){background:#202a3b!important}
+html.dark-mode .toast{box-shadow:0 10px 30px #0008}
+#darkModeToggle{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-width:40px;cursor:pointer;border:1px solid var(--border);background:var(--blue);color:var(--navy);border-radius:24px;padding:8px 10px;font-size:15px;font-weight:900;transition:transform .2s,background .25s;}
+#darkModeToggle:hover{transform:translateY(-2px)}#darkModeToggle .theme-label{font-size:10px}
+#lampTransition{position:fixed;inset:0;z-index:99999;display:grid;place-items:center;background:#070b13;opacity:0;pointer-events:none;transition:opacity .22s ease}
+#lampTransition.active{opacity:1}#lampTransition .lamp-scene{display:flex;flex-direction:column;align-items:center;gap:16px;color:#fff;font-family:inherit;font-weight:900;letter-spacing:.4px}
+#lampTransition .lamp{font-size:76px;filter:drop-shadow(0 0 22px #ffd166);transform-origin:top center;animation:lampSwing .45s ease-in-out 2}
+#lampTransition .lamp-glow{width:180px;height:80px;border-radius:50%;background:radial-gradient(ellipse,#ffe8a3aa,transparent 70%);margin-top:-15px;animation:glowFlicker .7s ease-in-out forwards}
+#lampTransition .lamp-caption{font-size:13px;color:#dbe5f7}
+@keyframes lampSwing{0%,100%{transform:rotate(0)}25%{transform:rotate(12deg)}75%{transform:rotate(-12deg)}}@keyframes glowFlicker{0%{opacity:1;transform:scale(1.15)}45%{opacity:.8}65%{opacity:.35}80%{opacity:.7}100%{opacity:0;transform:scale(.65)}}
+@media(max-width:700px){#darkModeToggle .theme-label{display:none}#darkModeToggle{padding:8px;min-width:36px}}
+@media(prefers-reduced-motion:reduce){#lampTransition,#lampTransition *{animation:none!important;transition:none!important}}
+
+/* Dark-mode coverage: unify all page backgrounds and improve text contrast */
+html.dark-mode body,
+html.dark-mode main,
+html.dark-mode .main-content,
+html.dark-mode .page-content,
+html.dark-mode .content-wrap,
+html.dark-mode .hero,
+html.dark-mode .hero-section,
+html.dark-mode .page-hero,
+html.dark-mode .section,
+html.dark-mode .content-section,
+html.dark-mode .map-section,
+html.dark-mode .mission-section,
+html.dark-mode .leaderboard-section,
+html.dark-mode .profile-section {
+  background-color: #101521 !important;
+  color: #edf2ff !important;
+}
+html.dark-mode h1, html.dark-mode h2, html.dark-mode h3,
+html.dark-mode h4, html.dark-mode h5, html.dark-mode h6,
+html.dark-mode p, html.dark-mode li, html.dark-mode label,
+html.dark-mode span, html.dark-mode strong, html.dark-mode b,
+html.dark-mode legend, html.dark-mode summary {
+  text-shadow: none;
+}
+html.dark-mode h1, html.dark-mode h2, html.dark-mode h3,
+html.dark-mode h4, html.dark-mode h5, html.dark-mode h6,
+html.dark-mode p, html.dark-mode li, html.dark-mode label,
+html.dark-mode .subtitle, html.dark-mode .description,
+html.dark-mode .section-subtitle, html.dark-mode .hero-description,
+html.dark-mode .stat-label, html.dark-mode .helper-text,
+html.dark-mode .empty-state, html.dark-mode .breadcrumb {
+  color: #d5deef !important;
+}
+html.dark-mode .hero h1, html.dark-mode .page-title,
+html.dark-mode .section-title, html.dark-mode .card-title,
+html.dark-mode .stat-value { color: #f4f7ff !important; }
+html.dark-mode [style*="background: white"],
+html.dark-mode [style*="background:white"],
+html.dark-mode [style*="background-color: white"],
+html.dark-mode [style*="background-color:white"],
+html.dark-mode [style*="background: #fff"],
+html.dark-mode [style*="background:#fff"],
+html.dark-mode [style*="background-color: #fff"],
+html.dark-mode [style*="background-color:#fff"],
+html.dark-mode [style*="background: rgb(255"],
+html.dark-mode [style*="background-color: rgb(255"] {
+  background: #1a2333 !important;
+  color: #edf2ff !important;
+  border-color: #354158 !important;
+}
+html.dark-mode .hero *, html.dark-mode .page-hero *,
+html.dark-mode .content-section *, html.dark-mode .map-section *,
+html.dark-mode .mission-section *, html.dark-mode .leaderboard-section *,
+html.dark-mode .profile-section * { border-color: #354158; }
+html.dark-mode .hero h1 span:not(.accent), html.dark-mode .hero p,
+html.dark-mode .hero .muted, html.dark-mode .hero .eyebrow {
+  color: #d5deef !important;
+}
+html.dark-mode .hero .accent, html.dark-mode .hero .highlight,
+html.dark-mode .hero h1 .red, html.dark-mode .hero h1 .brand-accent {
+  color: #ff6b73 !important;
+}
+html.dark-mode .nav-btn:not(.active), html.dark-mode .top-actions,
+html.dark-mode .top-actions button { color: #e8eefb; }
+html.dark-mode .badge, html.dark-mode .tag, html.dark-mode .chip {
+  border-color: #43516a !important;
+}
+html.dark-mode a:not(.nav-btn):not(.btn) { color: #9fc5ff; }
+html.dark-mode .btn-secondary, html.dark-mode button.secondary,
+html.dark-mode .outline-btn { background: #202b3e !important; color: #edf2ff !important; border-color: #53617a !important; }
+html.dark-mode .progress-track, html.dark-mode .progress-bg { background: #354158 !important; }
+html.dark-mode ::placeholder { color: #9aa9c2 !important; opacity: 1; }
+
+
+/* === GATASIA DARK MODE: HIGH CONTRAST OVERRIDES === */
+html.dark-mode,
+html.dark-mode body {
+  background: #080d18 !important;
+  color: #f5f7ff !important;
+}
+html.dark-mode body::before,
+html.dark-mode body::after,
+html.dark-mode main::before,
+html.dark-mode main::after { background-color: transparent !important; }
+
+/* Make every major page canvas dark, including layouts with inline backgrounds */
+html.dark-mode body > *,
+html.dark-mode main,
+html.dark-mode header,
+html.dark-mode footer,
+html.dark-mode section,
+html.dark-mode article,
+html.dark-mode .container,
+html.dark-mode .wrapper,
+html.dark-mode .page,
+html.dark-mode .page-wrapper,
+html.dark-mode .main,
+html.dark-mode .main-content,
+html.dark-mode .content,
+html.dark-mode .content-wrap,
+html.dark-mode .page-content,
+html.dark-mode .hero,
+html.dark-mode .hero-section,
+html.dark-mode .map-container,
+html.dark-mode .map-layout,
+html.dark-mode .map-info,
+html.dark-mode .mission-layout,
+html.dark-mode .quiz-container,
+html.dark-mode .leaderboard-container,
+html.dark-mode .profile-container {
+  background-color: #0b1120 !important;
+  color: #f5f7ff !important;
+}
+
+/* Recolor light surfaces and quiz answer tiles that were unreadable in dark mode */
+html.dark-mode div,
+html.dark-mode article,
+html.dark-mode section,
+html.dark-mode aside,
+html.dark-mode li,
+html.dark-mode .card,
+html.dark-mode .panel,
+html.dark-mode .mission-card,
+html.dark-mode .quiz-card,
+html.dark-mode .target-card,
+html.dark-mode .step-card,
+html.dark-mode .answer-option,
+html.dark-mode .option-card,
+html.dark-mode .province-card,
+html.dark-mode .info-card,
+html.dark-mode .stat-card,
+html.dark-mode .leaderboard-card,
+html.dark-mode .profile-card,
+html.dark-mode .map-card {
+  border-color: #34445f;
+}
+html.dark-mode .card,
+html.dark-mode .panel,
+html.dark-mode .mission-card,
+html.dark-mode .quiz-card,
+html.dark-mode .target-card,
+html.dark-mode .step-card,
+html.dark-mode .answer-option,
+html.dark-mode .option-card,
+html.dark-mode .province-card,
+html.dark-mode .info-card,
+html.dark-mode .stat-card,
+html.dark-mode .leaderboard-card,
+html.dark-mode .profile-card,
+html.dark-mode .map-card,
+html.dark-mode .answer-option:not(.correct):not(.wrong),
+html.dark-mode button.answer-option:not(.correct):not(.wrong) {
+  background: #172236 !important;
+  color: #f5f7ff !important;
+  border: 1px solid #3a4b68 !important;
+}
+
+/* White/light inline backgrounds must not remain white */
+html.dark-mode [style*="background-color: #fff"],
+html.dark-mode [style*="background-color:#fff"],
+html.dark-mode [style*="background: #fff"],
+html.dark-mode [style*="background:#fff"],
+html.dark-mode [style*="background-color: rgb(255, 255, 255)"],
+html.dark-mode [style*="background: rgb(255, 255, 255)"],
+html.dark-mode [style*="background-color: rgb(248"],
+html.dark-mode [style*="background-color: rgb(249"],
+html.dark-mode [style*="background-color: rgb(250"],
+html.dark-mode [style*="background-color: rgb(245"],
+html.dark-mode [style*="background-color: rgb(240"] {
+  background: #172236 !important;
+  color: #f5f7ff !important;
+  border-color: #3a4b68 !important;
+}
+
+/* Force readable white text, but preserve functional color statuses and controls */
+html.dark-mode h1, html.dark-mode h2, html.dark-mode h3,
+html.dark-mode h4, html.dark-mode h5, html.dark-mode h6,
+html.dark-mode p, html.dark-mode li, html.dark-mode label,
+html.dark-mode span, html.dark-mode strong, html.dark-mode b,
+html.dark-mode small, html.dark-mode em, html.dark-mode summary,
+html.dark-mode dt, html.dark-mode dd, html.dark-mode figcaption,
+html.dark-mode .muted, html.dark-mode .subtitle, html.dark-mode .description,
+html.dark-mode .helper-text, html.dark-mode .stat-label,
+html.dark-mode .breadcrumb, html.dark-mode .eyebrow,
+html.dark-mode .nav-btn:not(.active) {
+  color: #f0f4ff !important;
+}
+html.dark-mode .nav-btn.active,
+html.dark-mode .btn-primary,
+html.dark-mode .correct,
+html.dark-mode .success,
+html.dark-mode .status-success { color: #ffffff !important; }
+html.dark-mode .accent,
+html.dark-mode .brand-accent,
+html.dark-mode .red,
+html.dark-mode .danger,
+html.dark-mode .status-danger { color: #ff737b !important; }
+html.dark-mode .warning,
+html.dark-mode .gold,
+html.dark-mode .xp-value { color: #ffd166 !important; }
+html.dark-mode .muted,
+html.dark-mode small,
+html.dark-mode .helper-text,
+html.dark-mode .stat-label { color: #d0daec !important; }
+
+/* 3D icon badges: a visible frame, dark inset, rim and glow */
+html.dark-mode .icon,
+html.dark-mode .icon-wrap,
+html.dark-mode .icon-box,
+html.dark-mode .emoji-icon,
+html.dark-mode .step-icon,
+html.dark-mode .stat-icon,
+html.dark-mode .badge-icon,
+html.dark-mode .mission-icon,
+html.dark-mode .province-icon,
+html.dark-mode .achievement-icon,
+html.dark-mode .avatar,
+html.dark-mode .map-pin,
+html.dark-mode .map-marker,
+html.dark-mode [class*="icon-3d"],
+html.dark-mode .step-card .icon,
+html.dark-mode .stat-card > :first-child,
+html.dark-mode .mission-card > :first-child {
+  box-sizing: border-box;
+  border: 1px solid #7185a7 !important;
+  outline: 2px solid #263955;
+  outline-offset: 2px;
+  border-radius: 14px !important;
+  background: linear-gradient(145deg, #263750, #111b2d) !important;
+  color: #ffffff !important;
+  box-shadow: inset 0 1px 0 #ffffff26, 0 4px 12px #0007, 0 0 0 3px #ffffff0b !important;
+  text-shadow: 0 1px 3px #000 !important;
+}
+html.dark-mode button,
+html.dark-mode a,
+html.dark-mode input,
+html.dark-mode select,
+html.dark-mode textarea {
+  color: #f5f7ff;
+}
+html.dark-mode input, html.dark-mode select, html.dark-mode textarea {
+  background: #111b2d !important;
+  border-color: #435572 !important;
+}
+html.dark-mode .map-legend,
+html.dark-mode .legend,
+html.dark-mode .map-label,
+html.dark-mode .province-label {
+  background: #172236 !important;
+  color: #f5f7ff !important;
+  border-color: #526681 !important;
+}
+html.dark-mode .progress-track,
+html.dark-mode .progress-bg { background: #34445f !important; }
+html.dark-mode .site-footer { background: #080d18 !important; color: #f0f4ff !important; }
+
+/* Keep map canvas itself readable without obscuring the colorful province shapes */
+html.dark-mode .map-frame,
+html.dark-mode .map-viewport,
+html.dark-mode #map,
+html.dark-mode .map-canvas {
+  border: 2px solid #526681 !important;
+  box-shadow: 0 0 0 4px #ffffff0b, 0 12px 30px #0006 !important;
+}
+
+
+/* === FINAL HIGH-CONTRAST OVERRIDES: especially Daily Mission quiz === */
+html.dark-mode {
+  color-scheme: dark !important;
+  --bg:#090e1a !important; --white:#111a2a !important; --blue:#17243a !important;
+  --navy:#f5f7ff !important; --muted:#d4deef !important; --pale:#111a2a !important;
+}
+html.dark-mode body,
+html.dark-mode main,
+html.dark-mode .layout,
+html.dark-mode .mission-section,
+html.dark-mode .page-content {
+  background:#090e1a !important;
+  color:#f5f7ff !important;
+}
+/* Mission page: convert formerly white/pale panels and answer buttons to dark surfaces */
+html.dark-mode .intro,
+html.dark-mode .steps .step:not(.current),
+html.dark-mode .card,
+html.dark-mode .quiz-head,
+html.dark-mode .option,
+html.dark-mode .date-chip,
+html.dark-mode .streak,
+html.dark-mode .target-card,
+html.dark-mode .mission-target,
+html.dark-mode .target-item,
+html.dark-mode .daily-target,
+html.dark-mode .feedback,
+html.dark-mode .quiz-actions .secondary,
+html.dark-mode .quiz-actions button:disabled {
+  background:#151f31 !important;
+  color:#f5f7ff !important;
+  border-color:#354864 !important;
+  box-shadow:inset 0 1px 0 #ffffff08, 0 4px 0 #080d17 !important;
+}
+html.dark-mode .step.current,
+html.dark-mode .option.selected-correct,
+html.dark-mode .option.selected-wrong,
+html.dark-mode .option.reveal-correct,
+html.dark-mode .feedback.good,
+html.dark-mode .feedback.bad {
+  color:#ffffff !important;
+}
+html.dark-mode .step.current { background:#b7131a !important; }
+html.dark-mode .option { background:#151f31 !important; border:2px solid #435675 !important; }
+html.dark-mode .option:hover:not(:disabled) { background:#202e45 !important; border-color:#ffbd35 !important; }
+html.dark-mode .option:disabled { opacity:1 !important; }
+html.dark-mode .letter { background:#263650 !important; color:#ffffff !important; border:1px solid #637b9f !important; }
+html.dark-mode .question,
+html.dark-mode .question-count,
+html.dark-mode .intro h1,
+html.dark-mode .intro p,
+html.dark-mode .category,
+html.dark-mode .step strong,
+html.dark-mode .step small,
+html.dark-mode .timer,
+html.dark-mode .target-card *,
+html.dark-mode .mission-target *,
+html.dark-mode .target-item *,
+html.dark-mode .daily-target *,
+html.dark-mode .quiz-head *,
+html.dark-mode .option *,
+html.dark-mode .card p,
+html.dark-mode .card h2,
+html.dark-mode .card h3,
+html.dark-mode .card strong,
+html.dark-mode .card span,
+html.dark-mode .card label,
+html.dark-mode .card small {
+  color:#f5f7ff !important;
+}
+html.dark-mode .category,
+html.dark-mode .eyebrow { color:#ff737b !important; }
+html.dark-mode .timer { color:#ffd166 !important; }
+html.dark-mode .date-chip,
+html.dark-mode .streak { background:#302719 !important; border-color:#705b2d !important; }
+html.dark-mode .date-chip *, html.dark-mode .streak * { color:#ffe3a0 !important; }
+html.dark-mode .option.selected-correct { background:#123b32 !important; border-color:#36c99a !important; }
+html.dark-mode .option.selected-wrong { background:#401e29 !important; border-color:#ff727b !important; }
+html.dark-mode .feedback.good { background:#123b32 !important; border:1px solid #36c99a !important; }
+html.dark-mode .feedback.bad { background:#401e29 !important; border:1px solid #ff727b !important; }
+html.dark-mode .timer-track, html.dark-mode .xp-line { background:#34445f !important; }
+html.dark-mode .step-icon,
+html.dark-mode .letter,
+html.dark-mode .target-item .step-icon {
+  outline:2px solid #263955 !important; outline-offset:2px;
+  box-shadow:inset 0 1px 0 #ffffff25, 0 4px 12px #0008 !important;
+}
+/* General fallback for light inline backgrounds and common utility classes */
+html.dark-mode [style*="background:#fff"],
+html.dark-mode [style*="background: #fff"],
+html.dark-mode [style*="background-color:#fff"],
+html.dark-mode [style*="background-color: #fff"],
+html.dark-mode [style*="background: white"],
+html.dark-mode [style*="background-color: white"],
+html.dark-mode .bg-white,
+html.dark-mode .bg-light,
+html.dark-mode .bg-gray-50,
+html.dark-mode .bg-gray-100,
+html.dark-mode .bg-slate-50,
+html.dark-mode .bg-slate-100 {
+  background-color:#151f31 !important;
+  color:#f5f7ff !important;
+  border-color:#354864 !important;
+}
+html.dark-mode .bg-white *,
+html.dark-mode .bg-light *,
+html.dark-mode .bg-gray-50 *,
+html.dark-mode .bg-gray-100 *,
+html.dark-mode .bg-slate-50 *,
+html.dark-mode .bg-slate-100 * { color:#f5f7ff !important; }
+
+
+/* === UNIVERSAL DARK SURFACE FIX: all pages, white tiles and icon backplates === */
+html.dark-mode body,
+html.dark-mode main,
+html.dark-mode .main,
+html.dark-mode .page,
+html.dark-mode .page-wrap,
+html.dark-mode .page-container,
+html.dark-mode .container,
+html.dark-mode .content,
+html.dark-mode .content-wrap,
+html.dark-mode .main-content,
+html.dark-mode .page-content,
+html.dark-mode .layout,
+html.dark-mode .quiz-content,
+html.dark-mode .quizMission,
+html.dark-mode .quiz-mission {
+  background-color:#080d18 !important;
+  color:#f5f7ff !important;
+}
+
+/* Explicitly recolor common white cards and controls found across GATASIA pages. */
+html.dark-mode .intro,
+html.dark-mode .step:not(.current),
+html.dark-mode .quiz-head,
+html.dark-mode .option,
+html.dark-mode .mission-row,
+html.dark-mode .mission-item,
+html.dark-mode .target-row,
+html.dark-mode .target-item,
+html.dark-mode .date-chip,
+html.dark-mode .result-card,
+html.dark-mode .stat-box,
+html.dark-mode .feature-card,
+html.dark-mode .info-card,
+html.dark-mode .white-card,
+html.dark-mode .question-card,
+html.dark-mode .answer-card,
+html.dark-mode .quiz-option,
+html.dark-mode .province-card,
+html.dark-mode .achievement-card,
+html.dark-mode .badge-card,
+html.dark-mode .empty-card,
+html.dark-mode .filter-bar,
+html.dark-mode .filter-tabs,
+html.dark-mode .search-box,
+html.dark-mode .search-input-wrap {
+  background:#151f30 !important;
+  color:#f5f7ff !important;
+  border-color:#354761 !important;
+  box-shadow:0 3px 0 #050914 !important;
+}
+
+/* Strong text contrast: override pale text colors inherited from light theme. */
+html.dark-mode .intro p,
+html.dark-mode .step small,
+html.dark-mode .step strong,
+html.dark-mode .question-count,
+html.dark-mode .question,
+html.dark-mode .option-text,
+html.dark-mode .mission-row *,
+html.dark-mode .mission-item *,
+html.dark-mode .target-row *,
+html.dark-mode .target-item *,
+html.dark-mode .hint,
+html.dark-mode .date-chip,
+html.dark-mode .date-chip span,
+html.dark-mode .timer,
+html.dark-mode .question-count,
+html.dark-mode .mission-title span,
+html.dark-mode .mission-title h2,
+html.dark-mode .card p,
+html.dark-mode .card label,
+html.dark-mode .card small,
+html.dark-mode .card strong,
+html.dark-mode .card span,
+html.dark-mode .panel p,
+html.dark-mode .panel label,
+html.dark-mode .panel small,
+html.dark-mode .panel strong,
+html.dark-mode .panel span {
+  color:#f1f5ff !important;
+}
+html.dark-mode .eyebrow,
+html.dark-mode .category,
+html.dark-mode .accent,
+html.dark-mode .text-red,
+html.dark-mode .red-text { color:#ff747d !important; }
+
+/* Dark backgrounds behind 3D icons, emoji tiles and letter tiles. */
+html.dark-mode .step-icon,
+html.dark-mode .letter,
+html.dark-mode .mission-check,
+html.dark-mode .icon-box,
+html.dark-mode .icon-tile,
+html.dark-mode .feature-icon,
+html.dark-mode .stat-icon,
+html.dark-mode .badge-icon,
+html.dark-mode .achievement-icon,
+html.dark-mode .avatar-frame,
+html.dark-mode .icon-frame,
+html.dark-mode .emoji-box,
+html.dark-mode .tile-icon {
+  background:#202d42 !important;
+  color:#f8fbff !important;
+  border:1px solid #50627e !important;
+  box-shadow:0 3px 0 #050914, inset 0 1px 0 #ffffff18 !important;
+}
+html.dark-mode .step.current .step-icon,
+html.dark-mode .option .letter {
+  background:#202d42 !important;
+  color:#ffffff !important;
+  border-color:#50627e !important;
+}
+
+/* Convert inline white/light backgrounds to dark surfaces, including nested icon backplates. */
+html.dark-mode [style*="background:#fff"],
+html.dark-mode [style*="background: #fff"],
+html.dark-mode [style*="background-color:#fff"],
+html.dark-mode [style*="background-color: #fff"],
+html.dark-mode [style*="background:white"],
+html.dark-mode [style*="background: white"],
+html.dark-mode [style*="background-color:white"],
+html.dark-mode [style*="background-color: white"],
+html.dark-mode [style*="background: rgb(255, 255, 255)"],
+html.dark-mode [style*="background-color: rgb(255, 255, 255)"],
+html.dark-mode [style*="background: #f8faff"],
+html.dark-mode [style*="background:#f8faff"],
+html.dark-mode [style*="background: #f7f9ff"],
+html.dark-mode [style*="background:#f7f9ff"],
+html.dark-mode [style*="background: #f0f5ff"],
+html.dark-mode [style*="background:#f0f5ff"] {
+  background:#151f30 !important;
+  color:#f5f7ff !important;
+  border-color:#354761 !important;
+}
+
+/* Ensure all text inside those formerly white surfaces stays readable. */
+html.dark-mode .intro *,
+html.dark-mode .step:not(.current) *,
+html.dark-mode .quiz-head *,
+html.dark-mode .option *,
+html.dark-mode .mission-row *,
+html.dark-mode .mission-item *,
+html.dark-mode .target-row *,
+html.dark-mode .target-item *,
+html.dark-mode .date-chip *,
+html.dark-mode .result-card *,
+html.dark-mode .white-card *,
+html.dark-mode .question-card *,
+html.dark-mode .answer-card * {
+  text-shadow:none !important;
+}
+html.dark-mode .option.selected-correct,
+html.dark-mode .option.reveal-correct,
+html.dark-mode .feedback.good { background:#123b32 !important; color:#d7fff0 !important; border-color:#258a6b !important; }
+html.dark-mode .option.selected-wrong,
+html.dark-mode .feedback.bad { background:#421d28 !important; color:#ffe5e8 !important; border-color:#a83a4b !important; }
+html.dark-mode .btn-light,
+html.dark-mode .btn-secondary,
+html.dark-mode button.secondary { background:#202d42 !important; color:#f5f7ff !important; border-color:#50627e !important; }
+html.dark-mode .btn-primary:disabled { background:#354158 !important; color:#d8e0ee !important; box-shadow:0 3px 0 #050914 !important; }
+
+/* SVG/icon buttons: darken white circular or square backplates without recoloring artwork itself. */
+html.dark-mode .top-actions button,
+html.dark-mode .icon-button,
+html.dark-mode .round-button,
+html.dark-mode .sound-toggle,
+html.dark-mode .notification-button,
+html.dark-mode .profile-button {
+  background:#202b3e !important;
+  color:#f5f7ff !important;
+  border-color:#40516b !important;
+}
+html.dark-mode .top-actions button svg,
+html.dark-mode .icon-button svg,
+html.dark-mode .round-button svg { color:#eaf1ff !important; }
+
+/* GATASIA DARK MODE — final cross-page contrast repair (all pages) */
+html.dark-mode {
+  color-scheme: dark;
+  background: #080d19 !important;
+  color: #f4f7ff !important;
+}
+html.dark-mode body,
+html.dark-mode main,
+html.dark-mode .page,
+html.dark-mode .page-content,
+html.dark-mode .container,
+html.dark-mode .main-content,
+html.dark-mode .content-wrap {
+  background-color: #080d19 !important;
+  color: #f4f7ff !important;
+}
+/* White/light cards that remained on leaderboard, profile, home, map and missions. */
+html.dark-mode .podium-card,
+html.dark-mode .my-rank,
+html.dark-mode .rank-card,
+html.dark-mode .profile-card,
+html.dark-mode .profile-stats,
+html.dark-mode .profile-progress,
+html.dark-mode .xpbox,
+html.dark-mode .xp-box,
+html.dark-mode .stat-card,
+html.dark-mode .feature-card,
+html.dark-mode .province-card,
+html.dark-mode .result-card,
+html.dark-mode .white-card,
+html.dark-mode .intro,
+html.dark-mode .step:not(.current),
+html.dark-mode .quiz-head,
+html.dark-mode .option,
+html.dark-mode .mission-row,
+html.dark-mode .mission-item,
+html.dark-mode .target-row,
+html.dark-mode .target-item,
+html.dark-mode .answer-card,
+html.dark-mode .score-card,
+html.dark-mode .rank-summary,
+html.dark-mode .leaderboard-card,
+html.dark-mode .profile-hero,
+html.dark-mode .profile-level,
+html.dark-mode .progress-card,
+html.dark-mode .float-badge,
+html.dark-mode .stat-icon,
+html.dark-mode .map-controls,
+html.dark-mode .map-toolbar,
+html.dark-mode .map-legend,
+html.dark-mode .map-tip {
+  background: #151f30 !important;
+  color: #f4f7ff !important;
+  border-color: #344761 !important;
+  box-shadow: 0 3px 0 #050914 !important;
+}
+/* Inline styles in the original HTML use many shades of white/ice-blue. */
+html.dark-mode [style*="background: white"],
+html.dark-mode [style*="background:white"],
+html.dark-mode [style*="background-color: white"],
+html.dark-mode [style*="background-color:white"],
+html.dark-mode [style*="background: #fff"],
+html.dark-mode [style*="background:#fff"],
+html.dark-mode [style*="background: #f"],
+html.dark-mode [style*="background:#f"],
+html.dark-mode [style*="background-color: #fff"],
+html.dark-mode [style*="background-color:#fff"],
+html.dark-mode [style*="background-color: #f"],
+html.dark-mode [style*="background-color:#f"] {
+  background-color: #151f30 !important;
+  color: #f4f7ff !important;
+  border-color: #344761 !important;
+}
+/* Repair pale text that was designed for white cards. */
+html.dark-mode .podium-card *,
+html.dark-mode .my-rank *,
+html.dark-mode .rank-card *,
+html.dark-mode .profile-card *,
+html.dark-mode .profile-stats *,
+html.dark-mode .profile-progress *,
+html.dark-mode .xpbox *,
+html.dark-mode .xp-box *,
+html.dark-mode .stat-card *,
+html.dark-mode .feature-card *,
+html.dark-mode .province-card *,
+html.dark-mode .result-card *,
+html.dark-mode .white-card *,
+html.dark-mode .intro *,
+html.dark-mode .step:not(.current) *,
+html.dark-mode .quiz-head *,
+html.dark-mode .option *,
+html.dark-mode .mission-row *,
+html.dark-mode .mission-item *,
+html.dark-mode .target-row *,
+html.dark-mode .target-item *,
+html.dark-mode .answer-card *,
+html.dark-mode .score-card *,
+html.dark-mode .rank-summary *,
+html.dark-mode .leaderboard-card *,
+html.dark-mode .profile-hero *,
+html.dark-mode .profile-level *,
+html.dark-mode .progress-card *,
+html.dark-mode .float-badge * {
+  color: #f4f7ff !important;
+  text-shadow: none !important;
+}
+/* Labels and secondary text need readable contrast too. */
+html.dark-mode .muted,
+html.dark-mode .subtitle,
+html.dark-mode .description,
+html.dark-mode .stat-label,
+html.dark-mode .profile-subtitle,
+html.dark-mode .rank-subtitle,
+html.dark-mode small,
+html.dark-mode .text-muted,
+html.dark-mode .text-secondary {
+  color: #c5d0e2 !important;
+}
+/* Keep colored state/achievement text recognizable while improving contrast. */
+html.dark-mode .gold-text, html.dark-mode .gold-tag { color: #ffd166 !important; }
+html.dark-mode .green-text { color: #6ee7b7 !important; }
+html.dark-mode .red-text, html.dark-mode .tag.red-tag { color: #ff8d96 !important; }
+html.dark-mode .tag, html.dark-mode .pill, html.dark-mode .badge {
+  border-color: #425573 !important;
+}
+/* Do not place a dark plate over the actual map artwork. */
+html.dark-mode .map-canvas,
+html.dark-mode .map-canvas svg,
+html.dark-mode .map-canvas img {
+  color: inherit;
+}
+html.dark-mode .map-label,
+html.dark-mode .map-node .map-label {
+  color: #f8fbff !important;
+  background: #172236 !important;
+  border: 1px solid #60718c !important;
+}

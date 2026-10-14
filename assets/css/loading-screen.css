@@ -1,0 +1,17 @@
+
+/* GATASIA branded first-visit loading screen */
+#gatasia-loading-screen{position:fixed;inset:0;z-index:99999;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 38%,#fff 0%,#f4f7ff 48%,#e8efff 100%);opacity:1;visibility:visible;transition:opacity .55s ease,visibility .55s ease}
+#gatasia-loading-screen.gatasia-loading-hide{opacity:0;visibility:hidden;pointer-events:none}
+.gls-inner{width:min(90vw,420px);text-align:center;padding:28px}
+.gls-emblem{position:relative;width:100px;height:100px;margin:0 auto 22px;border-radius:30px;background:linear-gradient(145deg,#d92c32,#a90f19);box-shadow:0 12px 0 #8f1018,0 20px 35px #b7131a30;display:grid;place-items:center;color:#fff;font-size:49px;font-weight:1000;animation:gls-float 1.6s ease-in-out infinite}
+.gls-emblem:after{content:"";position:absolute;inset:-10px;border:2px solid #b7131a35;border-radius:37px;animation:gls-ring 1.8s ease-out infinite}
+.gls-title{font-family:'Nunito',system-ui,sans-serif;font-size:32px;font-weight:1000;letter-spacing:3px;color:#b7131a;line-height:1.1}
+.gls-subtitle{margin-top:9px;font:800 11px/1.5 'Nunito',system-ui,sans-serif;letter-spacing:2.2px;color:#64748b;text-transform:uppercase}
+.gls-route{display:flex;justify-content:center;gap:8px;margin:25px auto 17px}
+.gls-route span{width:8px;height:8px;border-radius:50%;background:#b7131a;animation:gls-dot 1s ease-in-out infinite}
+.gls-route span:nth-child(2){animation-delay:.13s}.gls-route span:nth-child(3){animation-delay:.26s}.gls-route span:nth-child(4){animation-delay:.39s}.gls-route span:nth-child(5){animation-delay:.52s}
+.gls-caption{font:700 12px 'Nunito',system-ui,sans-serif;color:#64748b}
+@keyframes gls-float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-8px) rotate(2deg)}}
+@keyframes gls-ring{0%{transform:scale(.88);opacity:.75}100%{transform:scale(1.2);opacity:0}}
+@keyframes gls-dot{0%,60%,100%{transform:translateY(0);opacity:.35}30%{transform:translateY(-7px);opacity:1}}
+@media(prefers-reduced-motion:reduce){.gls-emblem,.gls-emblem:after,.gls-route span{animation:none!important}#gatasia-loading-screen{transition:none}}

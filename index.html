@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GATASIA — Explorer Club Nusantara</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+<style>
+.site-footer{margin-top:38px;background:#eff4ff;border-top:1px solid #d3e4fe;padding:22px 20px;color:#64748b;font-size:12px}.site-footer-inner{max-width:1240px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.site-footer-brand{display:flex;align-items:center;gap:9px;color:#b7131a;text-decoration:none;font-weight:900}.site-footer-mark{width:30px;height:30px;display:grid;place-items:center;border-radius:9px;background:#b7131a;color:#fff;font-size:17px}.site-footer-brand small{display:block;color:#64748b;font-size:9px;letter-spacing:1px}.site-footer-inner p{margin:0}.site-footer-links{display:flex;gap:14px;flex-wrap:wrap}.site-footer-links a{color:#64748b;text-decoration:none;font-weight:800}.site-footer-links a:hover{color:#b7131a}@media(max-width:700px){.site-footer-inner{justify-content:center;text-align:center}.site-footer-brand,.site-footer-links{justify-content:center}}
+</style>
+<style id="gatasia-shared-layout-v4">
+/* Shared navbar: consistent with the supplied GATASIA reference screenshot */
+.topbar{box-sizing:border-box;height:80px;min-height:80px;position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:15px;padding:0 max(20px,calc((100% - 1400px)/2));margin:0;background:rgba(248,249,255,.97);backdrop-filter:blur(18px);border-bottom:1px solid #d3e4fe;box-shadow:0 4px 16px rgba(11,28,48,.06);font-family:Nunito,"Plus Jakarta Sans",system-ui,sans-serif;}
+.topbar .brand{display:flex;align-items:center;gap:11px;flex:0 0 auto;margin:0 auto 0 0;padding:0;background:none;border:0;text-align:left;text-decoration:none;color:#b7131a;white-space:nowrap;}
+.topbar .brand-mark{box-sizing:border-box;width:50px;height:50px;min-width:50px;border-radius:16px;background:linear-gradient(135deg,#b7131a,#db322f);box-shadow:0 4px 0 #93000d;color:#fff;display:grid;place-items:center;font-size:25px;font-weight:1000;}
+.topbar .brand b{display:block;font-size:23px;line-height:1;font-weight:1000;letter-spacing:-.5px;color:#b7131a;}
+.topbar .brand small{display:block;margin-top:5px;font-size:10px;line-height:1.2;letter-spacing:1px;font-weight:900;color:#5b403d;}
+.topbar .nav{box-sizing:border-box;display:flex;align-items:center;gap:3px;padding:6px;margin:0;background:#eff4ff;border:1px solid #d3e4fe;border-radius:18px;flex:0 1 auto;min-width:0;}
+.topbar .nav .nav-btn{box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;gap:3px;border:0;background:transparent;color:#5b403d;border-radius:12px;padding:13px 14px;margin:0;text-decoration:none;font-size:12px;line-height:1.2;font-weight:900;white-space:nowrap;cursor:pointer;}
+.topbar .nav .nav-btn.active{background:#b7131a;color:#fff;box-shadow:0 4px 0 #93000d;}
+.topbar .nav .nav-btn em{font-style:normal;background:#feb300;color:#281900;padding:3px 6px;border-radius:9px;font-size:9px;margin-left:1px;}
+.topbar .top-actions{display:flex;align-items:center;gap:8px;flex:0 0 auto;min-width:0;}
+.topbar .pill{box-sizing:border-box;display:inline-flex;align-items:center;gap:6px;border:1px solid #d3e4fe;background:#e5eeff;border-radius:30px;padding:9px 12px;font-size:11px;line-height:1.2;font-weight:800;color:#0b1c30;white-space:nowrap;}
+.topbar .search-trigger{background:#eff4ff;color:#5b403d;text-decoration:none;}
+.topbar .xp-pill{width:126px;display:flex;flex-direction:column;align-items:stretch;gap:5px;}
+.topbar .xp-pill small{display:flex;justify-content:space-between;gap:10px;}
+.topbar .progress{height:7px;display:block;background:#d3e4fe;border-radius:20px;overflow:hidden;}
+.topbar .progress i{height:100%;display:block;width:72.5%;background:linear-gradient(90deg,#feb300,#ffba38);border-radius:20px;}
+.topbar .circle-btn,.topbar .avatar{box-sizing:border-box;width:39px;height:39px;min-width:39px;border:1px solid #d3e4fe;border-radius:50%;background:#e5eeff;display:grid;place-items:center;font-size:17px;line-height:1;position:relative;padding:0;text-decoration:none;}
+.topbar .notification i{position:absolute;right:5px;top:4px;width:7px;height:7px;background:#b7131a;border-radius:50%;border:1px solid white;}
+.topbar .avatar{background:#fff1c8;border:3px solid #feb300;font-size:21px;}
+/* Shared compact footer across all four pages */
+.site-footer{box-sizing:border-box;width:100%;margin:34px 0 0;background:#eff4ff;border-top:1px solid #d3e4fe;padding:18px 22px;color:#64748b;font-size:12px;}
+.site-footer-inner{box-sizing:border-box;width:min(100%,1240px);margin:0 auto;display:grid;grid-template-columns:minmax(210px,1fr) auto minmax(260px,1fr);align-items:center;justify-content:space-between;gap:18px;}
+.site-footer-brand{display:flex;align-items:center;gap:9px;color:#b7131a;text-decoration:none;font-weight:900;min-width:0;}
+.site-footer-mark{width:34px;height:34px;flex:0 0 34px;display:grid;place-items:center;border-radius:10px;background:#b7131a;color:#fff;font-size:18px;}
+.site-footer-brand strong{display:block;font-size:12px;line-height:1.25;}
+.site-footer-brand small{display:block;margin-top:3px;color:#64748b;font-size:9px;letter-spacing:.8px;}
+.site-footer-inner p{margin:0;text-align:center;line-height:1.5;}
+.site-footer-links{display:flex;align-items:center;justify-content:flex-end;gap:14px;flex-wrap:wrap;}
+.site-footer-links a{color:#64748b;text-decoration:none;font-weight:800;white-space:nowrap;}
+.site-footer-links a:hover{color:#b7131a;}
+@media(max-width:1250px){.topbar{gap:9px;padding:0 18px}.topbar .nav .nav-btn{padding:11px 9px;font-size:11px}.topbar .top-actions{gap:5px}.topbar .pill{padding:8px 9px}.topbar .xp-pill{width:112px}}
+@media(max-width:1000px){.topbar{height:auto;min-height:80px;flex-wrap:wrap;padding:10px 16px;row-gap:9px}.topbar .brand{margin-right:auto}.topbar .top-actions{margin-left:auto}.topbar .nav{order:3;width:100%;justify-content:center}.topbar .nav .nav-btn{flex:1}.site-footer-inner{grid-template-columns:1fr;justify-items:center;text-align:center;gap:10px}.site-footer-links{justify-content:center}.site-footer-inner p{text-align:center}}
+@media(max-width:600px){.topbar{padding:10px 12px}.topbar .brand-mark{width:40px;height:40px;min-width:40px;border-radius:13px;font-size:21px}.topbar .brand b{font-size:18px}.topbar .brand small{font-size:8px}.topbar .search-trigger,.topbar .badge-pill,.topbar .top-actions .circle-btn{display:none}.topbar .nav{justify-content:flex-start;overflow-x:auto}.topbar .nav .nav-btn{flex:0 0 auto;padding:10px 9px;font-size:10px}.topbar .level-pill{display:none}.site-footer{padding:17px 14px;margin-top:24px}.site-footer-links{gap:8px 13px;font-size:11px}}
+</style>
+
+  <link rel="stylesheet" href="assets/css/loading-screen.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+<style id="gatasia-dark-mode-universal-fix">
+html.dark-mode,html.dark-mode body{background:#0b1120!important;color:#e8eef9!important;color-scheme:dark}
+html.dark-mode body,html.dark-mode main,html.dark-mode #app,html.dark-mode .page,html.dark-mode .page-content,html.dark-mode .main-content{background-color:#0b1120!important;color:#e8eef9!important}
+html.dark-mode .topbar,html.dark-mode header.topbar{background:rgba(11,17,32,.97)!important;border-color:#29364b!important;color:#eef4ff!important}
+html.dark-mode .nav,html.dark-mode .nav-menu,html.dark-mode .nav-links{background:#182235!important;border-color:#34435c!important}
+html.dark-mode .topbar .nav .nav-btn:not(.active),html.dark-mode .nav-btn:not(.active){color:#cbd5e1!important}
+html.dark-mode .topbar .brand small,html.dark-mode .brand small{color:#cbd5e1!important}
+html.dark-mode .pill,html.dark-mode .search-trigger,html.dark-mode .circle-btn,html.dark-mode .avatar{background:#202d42!important;border-color:#3b4b65!important;color:#f1f5f9!important}
+html.dark-mode .hero-wrap,html.dark-mode .hero,html.dark-mode .hero-section,html.dark-mode .hero-bg,html.dark-mode .page-hero{background:#0b1120!important;color:#f1f5f9!important}
+html.dark-mode .hero-wrap{background-image:linear-gradient(180deg,#0b1120,#101a2b)!important}
+html.dark-mode section,html.dark-mode article,html.dark-mode .card,html.dark-mode .panel,html.dark-mode .content-card,html.dark-mode .stat-card,html.dark-mode .leaderboard-card,html.dark-mode .mission-card,html.dark-mode .profile-card,html.dark-mode .map-panel,html.dark-mode .quiz-card,html.dark-mode .white-card{background-color:#151f30!important;border-color:#2d3b52!important;color:#e8eef9!important}
+html.dark-mode .bg-white,html.dark-mode .bg-surface,html.dark-mode .bg-surface-container-lowest,html.dark-mode .bg-surface-container-low,html.dark-mode .bg-surface-container,html.dark-mode .bg-surface-bright{background-color:#151f30!important}
+html.dark-mode [class*="bg-[#f"],html.dark-mode [class*="bg-[#e"],html.dark-mode [class*="bg-white"]{background-color:#151f30!important}
+html.dark-mode h1,html.dark-mode h2,html.dark-mode h3,html.dark-mode h4,html.dark-mode h5,html.dark-mode p,html.dark-mode li,html.dark-mode label,html.dark-mode legend,html.dark-mode .text-slate-900,html.dark-mode .text-slate-800,html.dark-mode .text-slate-700,html.dark-mode .text-gray-900,html.dark-mode .text-gray-800,html.dark-mode .text-gray-700,html.dark-mode .text-\[\#0b1c30\],html.dark-mode .text-\[\#5b403d\]{color:#e8eef9!important}
+html.dark-mode .text-slate-600,html.dark-mode .text-slate-500,html.dark-mode .text-gray-600,html.dark-mode .text-gray-500,html.dark-mode .text-muted,html.dark-mode small,html.dark-mode .subtitle,html.dark-mode .description{color:#b7c4d8!important}
+html.dark-mode input,html.dark-mode textarea,html.dark-mode select{background:#101a2b!important;color:#f1f5f9!important;border-color:#3b4b65!important}
+html.dark-mode input::placeholder,html.dark-mode textarea::placeholder{color:#91a0b7!important}
+html.dark-mode .site-footer,html.dark-mode footer{background:#101827!important;border-color:#29364b!important;color:#b7c4d8!important}
+html.dark-mode .site-footer a,html.dark-mode footer a{color:#cbd5e1!important}
+html.dark-mode .border,html.dark-mode [class*="border-slate-"],html.dark-mode [class*="border-gray-"]{border-color:#2d3b52!important}
+html.dark-mode .bg-blue-50,html.dark-mode .bg-indigo-50,html.dark-mode .bg-slate-50,html.dark-mode .bg-gray-50,html.dark-mode .bg-slate-100,html.dark-mode .bg-gray-100{background-color:#202d42!important}
+html.dark-mode .text-red-700,html.dark-mode .text-red-800{color:#ff8585!important}
+html.dark-mode .text-green-700,html.dark-mode .text-emerald-700{color:#6ee7b7!important}
+html.dark-mode .text-amber-700,html.dark-mode .text-yellow-700{color:#fcd34d!important}
+html.dark-mode .brand-mark,html.dark-mode .topbar .brand-mark,html.dark-mode .nav-btn.active,html.dark-mode .btn-primary,html.dark-mode button.primary{color:#fff!important}
+html.dark-mode .hero-card,html.dark-mode .brand-panel,html.dark-mode .gatasia-showcase{background:linear-gradient(135deg,#c81e2b,#970d19)!important;color:#fff!important}
+html.dark-mode .hero-card *,html.dark-mode .brand-panel *,html.dark-mode .gatasia-showcase *{color:inherit}
+html.dark-mode #lampTransition{color:#fff!important}
+@media(prefers-reduced-motion:no-preference){html.dark-mode body{transition:background-color .25s ease,color .25s ease}}
+</style>
+</head>
+<body>
+  <div id="toast" class="toast hidden"><span>✨</span><span id="toastText"></span></div>
+  <header class="topbar">
+    <button class="brand" data-action="home"><span class="brand-mark">G</span><span><b>GATASIA</b><small>EXPLORER CLUB</small></span></button>
+  <button class="burger-toggle" type="button" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="primary-navigation" title="Buka menu navigasi"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
+    <nav class="nav">
+      <button class="nav-btn active" data-action="home">🧭 Home</button>
+      <button class="nav-btn" data-action="map">📍 Jelajah Peta</button>
+      <button class="nav-btn" data-action="missions">⚡ Misi Harian <em>Hot</em></button>
+      <button class="nav-btn" data-action="leaderboard">🏆 Papan Peringkat</button>
+    </nav>
+    <div class="top-actions">
+      <button class="pill search-trigger" data-action="search">🔎 Cari Provinsi...</button>
+      <span class="pill level-pill">🏆 Lv. <b id="levelTop">4</b></span>
+      <button class="pill xp-pill" data-action="bonus"><small>XP <b id="xpTop">1450</b></small><span class="progress"><i id="xpBarTop"></i></span></button>
+      <span class="pill badge-pill">🏆 <b id="badgesTop">6</b> Lencana</span>
+      <button class="circle-btn" data-action="sound" title="Aktif/nonaktif suara" id="soundButton">🔊</button>
+      <button class="circle-btn notification" data-action="notifications" title="Pemberitahuan">♟<i></i></button>
+      <a class="avatar" href="pages/page5_profil.html" aria-label="Profil Penjelajah">🚀</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-wrap">
+      <div class="ambient"></div>
+      <div class="container">
+        <section class="hero grid-hero">
+          <div class="hero-copy">
+            <div class="edition"><span class="ping"></span> EDISI EKSPEDISI NUSANTARA 2024 <b>MVP LIVE</b></div>
+            <h1>Petualangan Seru Menjelajahi <span class="red-underline">38 Provinsi</span> Nusantara!</h1>
+            <p class="lead">Belajar budaya, sejarah, rumah adat, dan selesaikan misi interaktif sambil kumpulkan ribuan XP serta lencana legendaris bersama sahabat penjelajah se-Indonesia!</p>
+            <div class="hero-buttons"><button class="btn btn-red" data-action="map">🚀 Mulai Jelajah Peta Sekarang</button><button class="btn btn-white" data-action="guide">📖 Panduan Misi & Reward</button></div>
+            <div class="social-proof"><div class="faces"><span>👦🏻</span><span>👧🏽</span><span>👦🏽</span><b>+8k</b></div><div><div class="stars">★★★★★ <strong>4.9/5</strong></div><small>Digemari 8,400+ Murid Sekolah Dasar</small></div></div>
+          </div>
+          <div class="hero-art"><div class="orbit"></div><div class="hero-emblem"><div class="map-emoji">🗺️</div><h2>GATASIA</h2><p>Explorer Club Nusantara</p><span>Edisi 38 Provinsi MVP</span></div><button class="float-badge float-top" data-action="badge">🏆 <span><b>Lencana Emas</b><small>Tari Saman Unlocked!</small></span></button><button class="float-badge float-bottom" data-action="jakarta">🧭 <span><b>Zona Aktif MVP</b><small>DKI Jakarta • Sumut</small></span></button></div>
+        </section>
+
+        <section class="stats-grid">
+          <article class="stat-card"><div class="stat-head"><span class="stat-icon red">📍</span><span class="tag red-tag">Target 38</span></div><small>Total Provinsi</small><div class="stat-number">38 <small>Provinsi</small></div><p class="green-text">● 2 Aktif MVP: DKI & Sumut</p></article>
+          <article class="stat-card"><div class="stat-head"><span class="stat-icon gold">⚡</span><button class="tag gold-tag" data-action="bonus">+50 Booster</button></div><small>XP Terkumpul</small><div class="stat-number gold-text" id="xpStat">1450 <small>/ 2000 XP</small></div><div class="progress big"><i id="xpBarStat"></i></div></article>
+          <article class="stat-card"><div class="stat-head"><span class="stat-icon blue">🏆</span><span class="tag green-tag">Top 5%</span></div><small>Peringkat Nasional</small><div class="stat-number red-text">#14 <small>dari 1,280 anak</small></div><p>Gelar: <b>Penjelajah Cilik</b></p></article>
+          <article class="stat-card"><div class="stat-head"><span class="stat-icon green">🏅</span><span class="tag">Koleksi 15%</span></div><small>Lencana Diraih</small><div class="stat-number green-text" id="badgesStat">6 <small>/ 40 Badges</small></div><p class="badge-emojis">🏛️ ⛵ 🎨 🍲 <span id="badgeExtra">+2 lagi</span></p></article>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading"><div><span class="eyebrow">✨ METODE BERMAIN SAMBIL BELAJAR</span><h2>3 Fitur Andalan Sang Penjelajah</h2></div><p>Dirancang khusus dengan prinsip belajar ramah anak, penuh visual budaya, animasi, dan umpan balik instan.</p></div>
+          <div class="features-grid" id="peta-section">
+            <article class="feature-card"><div class="feature-icon red">📍</div><span class="eyebrow">FITUR #1 • VISUALISASI SPASIAL</span><h3>Peta Interaktif & Zoomable SVG Map</h3><p>Jelajahi kepulauan Nusantara. Klik wilayah untuk membuka cerita rakyat, rumah adat, fauna endemik, dan budaya.</p><div class="map-panel"><div class="panel-title"><b>Peta Indonesia</b><span>Klik Wilayah Aktif!</span></div><div class="map-canvas"><svg viewBox="0 0 300 120" role="img" aria-label="Ilustrasi peta Indonesia"><path d="M20,35 L55,20 L75,55 L35,80 Z" class="island active-sumatra" data-province="sumut"><title>Sumatera Utara</title></path><path d="M80,85 L145,82 L150,95 L85,98 Z" class="island active-java" data-province="jakarta"><title>DKI Jakarta</title></path><path d="M100,25 L145,20 L150,55 L105,60 Z" class="island coming" data-coming="Kalimantan"></path><path d="M165,30 L185,25 L180,50 L195,55 L170,70 Z" class="island coming" data-coming="Sulawesi"></path><path d="M230,40 L275,35 L285,75 L240,70 Z" class="island coming" data-coming="Papua"></path><circle cx="50" cy="45" r="4" class="map-pin"></circle><circle cx="95" cy="88" r="4" class="map-pin"></circle></svg><span class="map-label">📍 Sumatra & Java Active</span></div></div></article>
+            <article class="feature-card"><div class="feature-icon gold">✨</div><span class="eyebrow gold-text">FITUR #2 • PEDAGOGI TERPADU</span><h3>Modul 3-in-1 Mini Game</h3><p>Baca infografis visual, mainkan mini-game pasang baju adat, lalu uji ingatan melalui kuis berhadiah XP!</p><div class="map-panel"><div class="panel-title"><b>Mini-Game Baju Adat</b><span class="green-text" id="outfitStatus">Klik komponen!</span></div><div class="outfit-grid"><button data-outfit="top">👔<small id="outfitTop">+ Baju</small></button><button data-outfit="bottom">👖<small id="outfitBottom">+ Kain</small></button><button data-outfit="accessory">👑<small id="outfitAccessory">+ Mahkota</small></button></div></div></article>
+            <article class="feature-card"><div class="feature-icon green">🏆</div><span class="eyebrow green-text">FITUR #3 • PRESTASI NYATA</span><h3>Gamifikasi & Level Up Bertingkat</h3><p>Dari “Penjelajah Pemula” hingga “Mahaguru Nusantara”. Kumpulkan XP dan lencana sambil belajar.</p><div class="map-panel tier-panel"><div class="panel-title"><b>Tier Progress</b><span class="green-text" id="tierLabel">Level 4: Penjelajah Sabang</span></div><div class="tier-progress"><b id="tierLevel">4</b><div class="progress"><i id="tierBar"></i></div><b id="nextLevel">5</b></div><small class="center" id="xpRemaining">Tersisa 550 XP menuju Level 5</small></div></article>
+          </div>
+        </section>
+
+        <section class="highlight-section"><div class="highlight-copy"><span class="tag red-tag">PROVINSI UNGGULAN SIAP DIMAINKAN</span><h2>Siap Menguji Pengetahuanmu di 2 Wilayah Pertama?</h2><p>DKI Jakarta dengan megahnya Monumen Nasional dan kelezatan Kerak Telor, serta Sumatera Utara dengan Rumah Bolon dan Danau Toba yang melegenda.</p><div class="highlight-buttons"><button class="btn btn-white" data-action="jakarta">🏛️ Jelajah DKI Jakarta</button><button class="btn btn-white" data-action="sumut">🛶 Jelajah Sumatera Utara</button></div></div><div class="province-cards"><button class="province-card" data-action="jakarta"><div class="province-art jakarta-art">🏛️<span>Mudah</span></div><h3>DKI Jakarta</h3><p>Monas, Ondel-ondel, Kerak Telor</p><b>Mulai Misi Kuis →</b></button><button class="province-card" data-action="sumut"><div class="province-art sumut-art">🛶<span>Mudah</span></div><h3>Sumatera Utara</h3><p>Danau Toba, Ulos, Rumah Bolon</p><b>Mulai Misi Kuis →</b></button></div></section>
+
+        <section class="support-banner"><div class="support-person"><span>👧🏽</span><div><small>PENJELAJAH MUDA TERBAIK</small><h3>Kayla Saraswati (10 thn)</h3><p>Pelajar SD • Surabaya, Jawa Timur</p></div></div><blockquote>“GATASIA super seru! Aku jadi makin suka belajar sejarah dan kenal banyak daerah di Indonesia. Gamenya juga seru banget!”</blockquote><button class="btn btn-gold" data-action="support">♥ Dukung Petualangan</button></section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="site-footer-inner"><a class="site-footer-brand" href="index.html"><span class="site-footer-mark">G</span><span><strong>GATASIA Explorer Club</strong><small>Jelajah Nusantara</small></span></a><p>© 2026 GATASIA. Belajar, Main, Cinta Indonesiaku.</p><nav class="site-footer-links" aria-label="Navigasi footer"><a href="index.html">Home</a><a href="pages/page2_jelajahi_peta.html">Jelajah Peta</a><a href="pages/page3_misi_harian.html">Misi Harian</a><a href="pages/page4_papan_peringkat.html">Papan Peringkat</a></nav></div></footer>
+
+  <div class="modal-backdrop hidden" id="modalBackdrop"><section class="modal" role="dialog" aria-modal="true"><header class="modal-header"><div id="modalHeading"><span>🗺️</span><div><small>EKSPEDISI NUSANTARA</small><h2>GATASIA</h2></div></div><button class="close-btn" data-action="close" aria-label="Tutup">×</button></header><div class="modal-body" id="modalBody"></div></section></div>
+  <script src="assets/js/script.js"></script>
+
+<script>
+// Navigasi ant halaman GATASIA tanpa database.
+document.addEventListener('click', function(e) {
+  const nav = e.target.closest('[data-action]');
+  if (!nav) return;
+  if (nav.dataset.action === 'map') { e.preventDefault(); window.location.href = 'pages/page2_jelajahi_peta.html'; }
+  if (nav.dataset.action === 'missions') { e.preventDefault(); window.location.href = 'pages/page3_misi_harian.html'; }
+  if (nav.dataset.action === 'leaderboard') { e.preventDefault(); window.location.href = 'pages/page4_papan_peringkat.html'; }
+});
+</script>
+
+
+<script>
+(function(){
+  const header=document.querySelector('.topbar');
+  const toggle=header && header.querySelector('.burger-toggle');
+  if(!header || !toggle) return;
+  const closeMenu=()=>{header.classList.remove('menu-open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Buka menu navigasi');};
+  toggle.addEventListener('click',()=>{
+    const open=header.classList.toggle('menu-open');
+    toggle.setAttribute('aria-expanded',String(open));
+    toggle.setAttribute('aria-label',open?'Tutup menu navigasi':'Buka menu navigasi');
+  });
+  header.querySelectorAll('.nav a, .nav button, .top-actions a, .top-actions button').forEach(el=>{
+    el.addEventListener('click',()=>{if(window.matchMedia('(max-width: 900px)').matches) closeMenu();});
+  });
+  document.addEventListener('keydown',e=>{if(e.key==='Escape') closeMenu();});
+  window.addEventListener('resize',()=>{if(window.innerWidth>900) closeMenu();});
+})();
+</script>
+
+<script src="assets/js/api-client.js"></script>
+  <script src="assets/js/loading-screen.js"></script>
+  <script src="assets/js/dark-mode.js"></script>
+</body>
+</html>
